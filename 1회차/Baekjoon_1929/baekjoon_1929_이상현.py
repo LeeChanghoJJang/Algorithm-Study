@@ -16,4 +16,4 @@ for num in range(M, N + 1):
         print(num)
 
 # 위 코드의 시간 복잡도는 O(N * log(log N))
-# 주어진 문제에서 N <= 1,000,000
+# 주어진 문제에서 N <= 1,000,000 
