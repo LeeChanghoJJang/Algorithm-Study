@@ -5,7 +5,6 @@
 # 따라서 해시를 이용하여 탐색 시간을 줄이는 딕셔너리 사용 + 정수 키라 순서도 변경되지 않음
 
 import sys
-sys.stdin = open("input.txt")
 
 # 입력
 N = int(sys.stdin.readline())
