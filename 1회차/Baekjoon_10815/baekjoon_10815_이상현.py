@@ -15,3 +15,11 @@ for num in target_num:
         print(1, end = ' ')
     else:
         print(0, end = ' ')
+
+#-------------------------------------------------------------------------
+
+# 언패킹 연습
+        
+# N, num_list, M, target_list = open(0)
+# num_list = {*num_list.split()}
+# print(*(+(target in num_list) for target in target_list.split()), end = '')
