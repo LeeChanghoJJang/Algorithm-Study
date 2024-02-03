@@ -122,7 +122,7 @@ print(min_value)
 # 출력 : 149
 ```    
 
-### 🎄 날짜계산
+#### 🎄백준 1476 날짜계산
 > 주요 방법 : while문 통해서 (year - 몫) !=0인 경우를 출력
 ```python 
 # E : 지구, S : 태양, M : 달
@@ -136,7 +136,7 @@ while 1:
     year+=1
 print(year)
 ```
-### 🎀 소수 구하기
+#### 🎀 백준 1929 소수 구하기
 > 에라토스 테네스의 체 적극 활용
 ```python
 M, N = map(int, input().split())
@@ -156,7 +156,7 @@ for i in range(M, N+1):  # 범위 내에서 출력
         print(i)
 # 위 코드의 시간 복잡도는 O(N * log(log N))
 ```
-#### 문제 외
+#### 🥋 문제 외
 > 얕은복사, copy, 깊은 복사(deepcopy) 차이 이해 
 ```python    
 import copy
