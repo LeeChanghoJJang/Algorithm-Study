@@ -90,27 +90,41 @@ N    0       1         2      3
 1    0      1!
 2    0      2!*2    2!
 3    0      3!*3    2!*2*2    3!
-4    0      4!*4    3!*3*2    2!*2*3   4!
-5    0      5!*5    4!*4*2    3!*3*3   2!*2*4  5!
+4    0      4!*4    3!*3*2    2!*2*2*3   4!
+5    0      5!*5    4!*4*2    3!*3*2*3   2!*2*2*3*4  5!
 이렇게 되지 않을까??
 DP[N] = N!*N + (N-1)!*(N-1)*2 +(N-2)!*(N-2)*3 +...
 '''
 import sys
 sys.stdin = open('input.txt')
+T = int(sys.stdin.readline().strip())
 
-T = int(input())
-for tc in range(1,T+1):
-    N, P = map(int,input().split())
-    facto = [0] * (N+1)
-    facto[0] =1
-    # factorial P로 나눈만큼 정의
-    for i in range(1,N+1):
-        facto[i] = (facto[i-1] * i) % P
+def solve(N, P, factorials):
+    result = 0
+    current_factorial = 1
+    for i in range(N,0,-1):
+        current_factorial = (current_factorial * (N-i+1))%P
+        result = (result + factorials[i] * i* current_factorial) % P
+    return result
 
-    # DP정의
-    DP = [[0, (facto[i] * i) % P] + [0] * (N - 1) for i in range(N + 1)]
-    for j in range(2, N + 1):
-        for i in range(j, N + 1):
-            DP[i][j] = (DP[i - 1][j - 1] * j) % P
-    # pprint(DP)
-    print(f'#{tc} {sum(DP[N])%P}')
+for tc in range(1, T + 1):
+    N, P = map(int, sys.stdin.readline().split())
+    factorials = [1] * 250001
+    # 미리 팩토리얼을 계산하여 저장
+    for i in range(1, 250001):
+        factorials[i] = (factorials[i - 1] * i) % P
+    result = solve(N, P, factorials)
+    print(f'#{tc} {result}')
+
+# 내가 썻던 코드 : 런타임 오류(시간 초과)
+# T = int(input())
+# for tc in range(1,T+1):
+#     N, P = map(int,input().split())
+#
+#     # DP정의
+#     DP = [[0, (math.factorial(i) * i) % P] + [0] * (N - 1) for i in range(N + 1)]
+#     for j in range(2, N + 1):
+#         for i in range(j, N + 1):
+#             DP[i][j] = (DP[i - 1][j - 1] * j) % P
+#
+#     print(f'#{tc} {sum(DP[N])%P}')
