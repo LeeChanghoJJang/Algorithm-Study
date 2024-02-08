@@ -1,9 +1,6 @@
 # swea 19189 순열의 아름다움
 '''
 P=[6,7,1,8,3,2,5,4]
-(1,2),(5,8),(7,8),(3,3) 등은 이 순열에 존재하는 아름다운 쌍의 개수
-길이 N의 모든 순열에 대해 아름다운 쌍의 개수의 합을
-소수 P로 나눈 나머지는?
 
 P1, P2, ...,PN에 대해
 max(Pl,...,Pr) - min(Pl,...Pr) = r-l
@@ -92,7 +89,6 @@ N    0       1         2      3
 3    0      3!*3    2!*2*2    3!
 4    0      4!*4    3!*3*2    2!*2*2*3   4!
 5    0      5!*5    4!*4*2    3!*3*2*3   2!*2*2*3*4  5!
-이렇게 되지 않을까??
 DP[N] = N!*N + (N-1)!*(N-1)*2 +(N-2)!*(N-2)*3 +...
 '''
 import sys
@@ -117,14 +113,14 @@ for tc in range(1, T + 1):
     print(f'#{tc} {result}')
 
 # 내가 썻던 코드 : 런타임 오류(시간 초과)
-# T = int(input())
-# for tc in range(1,T+1):
-#     N, P = map(int,input().split())
-#
-#     # DP정의
-#     DP = [[0, (math.factorial(i) * i) % P] + [0] * (N - 1) for i in range(N + 1)]
-#     for j in range(2, N + 1):
-#         for i in range(j, N + 1):
-#             DP[i][j] = (DP[i - 1][j - 1] * j) % P
-#
-#     print(f'#{tc} {sum(DP[N])%P}')
+T = int(input())
+for tc in range(1,T+1):
+    N, P = map(int,input().split())
+
+    # DP정의
+    DP = [[0, (math.factorial(i) * i) % P] + [0] * (N - 1) for i in range(N + 1)]
+    for j in range(2, N + 1):
+        for i in range(j, N + 1):
+            DP[i][j] = (DP[i - 1][j - 1] * j) % P
+
+    print(f'#{tc} {sum(DP[N])%P}')
