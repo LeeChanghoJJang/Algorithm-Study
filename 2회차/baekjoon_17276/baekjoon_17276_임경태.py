@@ -1,5 +1,4 @@
 # 17276 배열 돌리기
-
 for tc in range(int(input())):
     di = [0, 1, 1, 1, 0, -1, -1, -1]
     dj = [1, 1, 0, -1, -1, -1, 0, 1]
@@ -14,7 +13,6 @@ for tc in range(int(input())):
             ni = size//2 + di[r] * (l+1)
             nj = size//2 + dj[r] * (l+1)
             temp[l][r] = arr[ni][nj]
-    
 
     # 숫자를 회전하기 위해 델타탐색 인덱스를 회전
     turn = (degree // 45) % 8

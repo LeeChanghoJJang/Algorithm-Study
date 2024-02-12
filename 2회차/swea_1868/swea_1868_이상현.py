@@ -33,7 +33,6 @@ dcol = (0, 1, 1, 1, 0, -1, -1, -1)
 for tc in range(T):
     N = int(input())
     list_ = [list(input()) for _ in range(N)]
-
     cnt = 0
 
     for row in range(N):

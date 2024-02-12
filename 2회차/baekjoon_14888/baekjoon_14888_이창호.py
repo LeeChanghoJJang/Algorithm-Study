@@ -8,7 +8,6 @@ operators = list(map(int,input().split()))
 min_val = 1e9
 max_val = -1e9
 
-
 def dfs(n,temp):
     global min_val,max_val
 

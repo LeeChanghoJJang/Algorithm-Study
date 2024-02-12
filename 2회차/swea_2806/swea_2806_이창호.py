@@ -34,6 +34,7 @@ for tc in range(1,T+1):
     complete = 0
     nqueen(row,col,num_sum,row_col_diff)
     print(f'#{tc} {complete}')
+
 # 두번째 방법 : N=12까지 동작 ( 13도 동작은 하나.. 매우 늦음)
 def is_safe(board, row, col):
     # 행이 인덱스 값이 1. 같은 열에 있는지, 2. 우하향 대각선, 3. 우상승 대각선인지
@@ -78,14 +79,14 @@ def n_queen(depth):
         result +=1
         return
 
-    #depth별 반복문
+    # depth별 반복문
     for i in range(N):
         # 해당 depth를 visited 하지 않았을 때
         if visited[i] == False:
             board[depth] = i
 
             if check(depth):
-                visited[i] =True
+                visited[i] = True
                 n_queen(depth + 1)
                 visited[i] = False
 
