@@ -113,14 +113,14 @@ for tc in range(1, T + 1):
     print(f'#{tc} {result}')
 
 # 내가 썻던 코드 : 런타임 오류(시간 초과)
-T = int(input())
-for tc in range(1,T+1):
-    N, P = map(int,input().split())
-
-    # DP정의
-    DP = [[0, (math.factorial(i) * i) % P] + [0] * (N - 1) for i in range(N + 1)]
-    for j in range(2, N + 1):
-        for i in range(j, N + 1):
-            DP[i][j] = (DP[i - 1][j - 1] * j) % P
-
-    print(f'#{tc} {sum(DP[N])%P}')
+# T = int(input())
+# for tc in range(1,T+1):
+#     N, P = map(int,input().split())
+#
+#     # DP정의
+#     DP = [[0, (math.factorial(i) * i) % P] + [0] * (N - 1) for i in range(N + 1)]
+#     for j in range(2, N + 1):
+#         for i in range(j, N + 1):
+#             DP[i][j] = (DP[i - 1][j - 1] * j) % P
+#
+#     print(f'#{tc} {sum(DP[N])%P}')
