@@ -82,15 +82,6 @@ def n_queen(depth):
     # depth별 반복문
     for i in range(N):
         # 해당 depth를 visited 하지 않았을 때
-        if visited[i] == False:
-            board[depth] = i
-
-            if check(depth):
-                visited[i] = True
-                n_queen(depth + 1)
-                visited[i] = False
-
-def check(n):
     # 행을 반복문을 통해 순회
     for i in range(n):
         # 열이 동일하거나, 대각선에 있거나 둘중 하나임
