@@ -6,7 +6,7 @@ from collections import deque
 dx = [0,1,0,-1]
 dy = [1,0,-1,0]
 
-# 일단 주어진 조건대로 영역을 나눠보자
+# 일단 주어진 조건에 따라 직사각형들을 색칠하여 구역 나누기
 def paint(x1,y1,x2,y2,graph):
     for i in range(x1, x2):
         for j in range(y1, y2):
