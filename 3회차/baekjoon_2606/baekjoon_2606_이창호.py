@@ -24,3 +24,6 @@ while stack:
             visited[next] =1
 # 1번 컴퓨터는 제외해야 하므로 -1 해줌 
 print(sum(visited)-1)
+'''
+31120KB 48ms
+'''
