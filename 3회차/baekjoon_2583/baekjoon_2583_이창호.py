@@ -47,3 +47,6 @@ for i in range(M):
             temp.append(BFS(i,j))
 print(len(temp))
 print(*sorted(temp))
+'''
+34096KB / 72ms
+'''
