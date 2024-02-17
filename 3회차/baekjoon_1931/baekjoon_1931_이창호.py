@@ -5,7 +5,7 @@ sys.stdin = open('input.txt')
 N = int(input())
 # 배정된 회의실을 시작점 기준으로 먼저 정렬하고, 도착점 기준으로 정렬한다.
 # 그리디 알고리즘을 적용할 것
-meetings = sorted([list(map(int,input().split())) for _ in range(N)],key=lambda x:(x[0],x[1]))
+meetings = sorted([tuple(map(int,input().split())) for _ in range(N)] ,key=lambda x:(x[0],x[1]))
 # 가능한 회의시간을 담을 temp 설정
 temp = []
 # 미팅에서 시작점과 끝점을 모두 순회

@@ -15,7 +15,7 @@ for i in range(connection):
 # 1번은 처음에 방문처리 해논거임. 의미 없음 
 visited = [0] +[1] + [0]* (N-1)
 stack = [1]
-# BFS 스택으로 돌림 
+# DFS 스택으로 돌림
 while stack:
     now = stack.pop()
     for next in board[now]:

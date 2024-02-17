@@ -5,9 +5,9 @@ from collections import deque
 N = int(input())
 # 당시의 인덱스와 값을 한쌍으로 저장시켜놓자
 balloons = deque(enumerate(map(int,input().split()),start=1))
+print(balloons)
 # balloons에서 순서대로 pop을 하자
 while balloons:
-    print(balloons)
     # 풍선의 번호와 터트리면 이동횟수를 저장
     num, move = balloons.popleft()
     # 일단 터트린 번호 출력
