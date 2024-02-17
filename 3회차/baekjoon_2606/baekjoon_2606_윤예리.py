@@ -17,3 +17,4 @@ def dfs(s):
 
 dfs(1)
 print(sum(visited)-1)
+# bfs 안 배웠을 때 푼 거라 bfs로 풀어도 될듯

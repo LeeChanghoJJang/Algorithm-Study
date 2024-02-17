@@ -12,7 +12,7 @@ count = 1
 end_time = meeting[0][1]
 
 for i in range(1, n):
-    if meeting[i][0] >= end_time:
+    if meeting[i][0] >= end_time:   # 끝나는 시간 이후 시작 된다면 count
         count += 1
         end_time = meeting[i][1]
 print(count)
