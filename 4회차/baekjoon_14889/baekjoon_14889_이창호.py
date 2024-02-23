@@ -4,18 +4,18 @@ import sys
 def solution(idx, depth):
     global answer
 
-    # 한 팀의 구성이이 완료 경우
+    # 한 팀의 구성이 완료 경우(visited 완성한 경우)
     if depth == n // 2:
         start = 0
         link = 0
         # 반복문을 통해 팀 능력치 조사
         for i in range(n):
             for j in range(n):
-                # 스타트 팀 능력치
+                # 스타트 팀 능력치 (둘 다 방문했을 경우에만)
                 if visited[i] and visited[j]:
                     start += graph[i][j]
 
-                # 링크 팀 능력치
+                # 링크 팀 능력치 (스타트 팀과 무조건 반대로 적용)
                 elif not visited[i] and not visited[j]:
                     link += graph[i][j]
 
