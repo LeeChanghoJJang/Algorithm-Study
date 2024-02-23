@@ -1,4 +1,4 @@
-# 10026 : 적록색약
+# 10026 : 적록색약 (34096KB 80ms)
 import sys
 from collections import deque 
 dx = [0,1,0,-1]
