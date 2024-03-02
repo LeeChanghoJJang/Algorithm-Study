@@ -1,11 +1,11 @@
 import sys
 sys.stdin=open('input.txt')
-
+# 각 사각형별로 색깔을 칠함 
 def coloring(x1,y1,x2,y2,color):
     for i in range(x1, x2):
         for j in range(y1, y2):
             arr[i][j]=color
-
+# 각 색별로 카운팅 
 def counting(arr,color):
     cnt = 0
     for i in range(min_x,max_x):
@@ -21,6 +21,7 @@ min_y = 1e9
 arr = [[0] * 1001 for _ in range(1001)]
 color = 1
 T = int(input())
+# 시작점의 x,y 도착점의 x,y를 받음
 for tc in range(T):
     x1,y1,x1_alpha,y1_alpha = map(int,input().split())
     if x1 + x1_alpha > max_x:
