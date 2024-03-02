@@ -1,10 +1,11 @@
 import sys
-
+# 스위치 켜고끄기
 def button(gender,number,switch,N):
+    # 학생일 때
     if gender==1:
         for i in range(number-1,N,number):
             switch[i] = 1 - switch[i]
-
+    # 여학생일 때
     elif gender==2:
         for i in range(min(number,N-number+1)):
             if i ==0:
