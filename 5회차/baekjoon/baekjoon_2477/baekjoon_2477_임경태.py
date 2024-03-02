@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open('input.txt')
-
 K = int(input())
 d, l = zip(*[list(map(int, input().split())) for _ in range(6)])
 cnt = [d.count(i) for i in range(5)]

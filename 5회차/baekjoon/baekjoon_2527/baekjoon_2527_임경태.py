@@ -1,21 +1,14 @@
 # 2527 직사각형
 
-import sys
-sys.stdin = open('input.txt')
-
 for _ in range(4):
     s1_x, s1_y, e1_x, e1_y, s2_x, s2_y, e2_x, e2_y = map(int, input().split())
     max_x, max_y = max(s1_x, s2_x), max(s1_y, s2_y)
     min_x, min_y = min(e1_x, e2_x), min(e1_y, e2_y)
 
-    if min_x < max_x or min_y < max_y:
-        print('d')
-    elif min_x == max_x and min_y == max_y:
-        print('c')
-    elif min_x == max_x or min_y == max_y:
-        print('b')
-    else:
-        print('a')
+    if min_x < max_x or min_y < max_y: print('d')
+    elif min_x == max_x and min_y == max_y: print('c')
+    elif min_x == max_x or min_y == max_y: print('b')
+    else: print('a')
 
 '''
 for _ in range(4):

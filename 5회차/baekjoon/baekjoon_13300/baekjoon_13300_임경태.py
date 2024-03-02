@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open('input.txt')
-
 # 학생 수, 한방 배정 최대 인원 수
 N, K = map(int, input().split())
 cnt = [[0]*6, [0]*6]

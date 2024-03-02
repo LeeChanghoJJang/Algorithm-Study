@@ -2,11 +2,6 @@
 # 목표: 입력되는 순서대로 자기의 성별과 받은 수에 따라 스위치의 상태를 바꾸었을 때,
 # 스위치들의 마지막 상태를 출력
 
-import sys
-
-sys.stdin = open("input.txt")
-input = sys.stdin.readline
-
 N = int(input())  # N: 스위치 개수
 switch = [0] + list(map(int, input().split()))  # 스위치 상태
 S = int(input())  # S: 학생 수

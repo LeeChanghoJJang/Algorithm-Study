@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open("input.txt")
-
 dr = ((1, 0), (0, 1), (-1, 0), (0, -1))
 C, R = map(int, input().split())
 seat = [[0] * C for _ in range(R)]

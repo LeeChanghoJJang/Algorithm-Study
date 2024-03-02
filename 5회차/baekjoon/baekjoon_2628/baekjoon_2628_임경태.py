@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open('input.txt')
-
 W, L = map(int, input().split())  # 가로, 세로
 N = int(input())  # 잘라야하는 점선의 개수
 w_cut, l_cut = [0, L], [0, W]

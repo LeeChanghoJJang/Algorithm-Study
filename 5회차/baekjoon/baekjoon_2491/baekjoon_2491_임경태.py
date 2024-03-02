@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open('input.txt')
-
 N = int(input())
 seq = list(map(int, input().split()))
 DP1, DP2 = [1] * N, [1] * N

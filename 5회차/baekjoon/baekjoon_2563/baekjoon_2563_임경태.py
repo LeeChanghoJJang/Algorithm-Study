@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open('input.txt')
-
 N = int(input())
 paper = [[0] * 100 for _ in range(100)]
 

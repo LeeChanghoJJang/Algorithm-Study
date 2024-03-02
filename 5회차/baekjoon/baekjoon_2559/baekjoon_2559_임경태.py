@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open('input.txt')
-
 # 풀이 1 : 누적합
 N, K = map(int, input().split())
 temp = [0] + list(map(int, input().split()))

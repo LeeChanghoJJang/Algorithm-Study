@@ -1,11 +1,7 @@
 # 2304 창고 다각형
 
-import sys
-sys.stdin = open('input.txt')
-
 def cal(start, end, rev):
-    global area
-    local_high = 0
+    global area; local_high = 0
     for i in range(start, end, rev):
         if i in idx:
             local_high = max(local_high, h[idx.index(i)])

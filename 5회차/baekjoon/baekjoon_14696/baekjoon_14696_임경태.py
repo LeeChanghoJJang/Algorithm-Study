@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open('input.txt')
-
 for _ in range(int(input())):
     a, *ap = map(int, input().split())
     b, *bp = map(int, input().split())
