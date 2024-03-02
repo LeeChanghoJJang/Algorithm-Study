@@ -31,11 +31,12 @@ def Bingo():
             temp1 +=1
         if visited[i][4-i]==1:
             temp2 +=1
+    # 5개 채워지면
     if temp1 ==5:
         result += 1
     if temp2 ==5:
         result +=1
-
+    # 빙고가 3개 이상이면 True
     if result >=3:
         return True
     return False
@@ -44,13 +45,16 @@ def Bingo():
 bingo = [list(map(int,input().split())) for _  in range(5)]
 moderator=[]
 visited = [[0] * 5 for _ in range(5)]
+# 사회자가 부르는 넘버를 그냥 순차적으로 부르기 위해 1차원 배열에 담음
 for _ in range(5):
     moderator.extend(list(map(int,input().split())))
 
 cnt= 0
+# 사회자가 부르는거 순차적으로
 for obj in moderator:
     cnt+=1
     find_number(obj)
+    # 몇번째 불렀을 때 빙고인지
     if cnt >=5 and Bingo():
         print(cnt)
         break
