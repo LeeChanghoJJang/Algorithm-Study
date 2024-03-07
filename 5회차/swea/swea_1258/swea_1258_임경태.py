@@ -12,7 +12,7 @@ for tc in range(int(input())):
             if arr[i][j] > 0:
                 width += 1
             # width를 체크하던 상태에서 끝을 만나면 딕셔너리에 width를 key로 length를 증가시킴
-            elif (not arr[i][j] or IndexError) and width:
+            elif not arr[i][j] and width:
                 part_dict[width] = part_dict.get(width, 0) + 1
                 width = 0
 
