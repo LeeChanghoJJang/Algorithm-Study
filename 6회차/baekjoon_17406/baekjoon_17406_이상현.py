@@ -2,6 +2,7 @@
 
 from itertools import permutations
 
+# (r, c, s) 회전 연산을 수행하는 함수
 def rotation_func(r, c, s):
     for depth in range(s):
         temp1 = temp[r - 1 - (s - depth)][c - 1 - (s - depth)]
@@ -24,6 +25,8 @@ rotation_list = permutations(rotation_list)
 min_ = float('inf')
 
 for rotation in rotation_list:
+    # 원본 matrix를 변환하지 않기 위해 matrix를 복사하여
+    # temp에 저장
     temp = [row[:] for row in matrix]
 
     for r, c, s in rotation:

@@ -1,5 +1,6 @@
 # 백준 1865번 웜홀
 
+# 벨만 포드 알고리즘
 def bf():
     for i in range(N):
         for j in range(len(edges)):
