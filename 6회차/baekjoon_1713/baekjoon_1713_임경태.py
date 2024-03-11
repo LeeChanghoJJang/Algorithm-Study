@@ -1,4 +1,6 @@
 # 1713 후보 추천하기
+import sys
+sys.stdin = open('input.txt')
 
 N, rec, pic = int(input()), input(), {}
 
@@ -10,7 +12,6 @@ for i, n in enumerate(input().split()):
             min_stu = min(pic.items(), key=lambda x: (x[1][0], x[1][1]))
             del pic[min_stu[0]]
         pic[n] = [1, i]
-
 print(*sorted(pic))
 
 '''
