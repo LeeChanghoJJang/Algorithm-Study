@@ -1,4 +1,4 @@
-## Algorithm Study 5회차 회의 (24.3.10.) 
+## Algorithm Study 6회차 회의 (24.3.10.) 
 
 ### 💬 회의개요
     가. 금일 일정 
