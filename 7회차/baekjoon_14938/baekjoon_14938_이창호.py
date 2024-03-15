@@ -1,7 +1,7 @@
 import sys
 sys.stdin = open('input.txt')
 import heapq
-
+# 다익스트라 구현해서 DP 반환(최단거리)
 def Dijkstra(start):
     dp = [100 for _ in range(n + 1)]
     INF = int(1e9)
@@ -19,6 +19,7 @@ def Dijkstra(start):
     return dp
 
 n, m, r =map(int,input().split())
+# 인덱스를 키값으로하여 아이템 갯수들 저장 
 t = dict(enumerate(map(int,input().split()),start=1))
 heap = []
 graph = [[] for _ in range(n+1)]
@@ -29,8 +30,10 @@ for i in range(r):
 
 max_val = 0
 for i in range(1,n+1):
+    # 각 점으로부터 최단거리 호출
     distances = Dijkstra(i)
     ans = 0
+    # 가용거리 내 있으면 그 거리에 있는 아이템 갯수 저장 
     for j in range(1,n+1):
         if distances[j] <= m:
             ans += t[j]
