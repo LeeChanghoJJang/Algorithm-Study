@@ -2,6 +2,7 @@
 
 from collections import deque
 
+# 그래프 제작
 N = int(input()); input()
 graph = [[] for _ in range(N)] 
 for i in range(N):
@@ -18,6 +19,7 @@ while Q:
         if not visit[next]: Q.append(next)
     visit[now] = 1
 
+# 모두 방문했다면 YES
 if all(visit[city - 1] for city in seq): print('YES')
 else: print('NO')
 

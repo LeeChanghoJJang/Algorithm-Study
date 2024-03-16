@@ -5,6 +5,7 @@ def f(d, sum):
     if d == N:
         global ans; ans = max(ans, sum); return
     per = cns[d][0]; cost = cns[d][1]
+    # 상담을 해서 퇴사날보다 초과되지 않는다면 고려
     if d+per < N+1:
         f(d+per, sum+cost)
     f(d+1, sum)
