@@ -48,15 +48,20 @@ sys.stdin = open('input.txt')
 from collections import deque
 
 N = int(input())
+# 간선이 N-1개 주어지므로 무조건 부모노드는 하나만 나와서, 정수값으로 저장
+# trees는 각 인덱스가 자식노드고, 값이 부모노드임
 trees = [-1 for _ in range(N+1)]
+# 각 노드의 깊이 저장
 depth = [0] * (N+1)
-adjacency_list = [[] for _ in range(N+1)]
 
+# 노드의 연결정보를 저장
+adjacency_list = [[] for _ in range(N+1)]
 for _ in range(N-1):
     u, v = map(int, input().split())
     adjacency_list[u].append(v)
     adjacency_list[v].append(u)
 
+# 1이 루트 노드임 
 queue = deque([1])
 visited = [False] * (N+1)
 
