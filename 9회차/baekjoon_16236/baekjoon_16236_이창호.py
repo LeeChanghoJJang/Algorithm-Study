@@ -29,13 +29,11 @@ def BFS(x, y, visited):
 # 입력 받기
 N = int(sys.stdin.readline())  # 공간의 크기
 graph = [list(map(int, input().split())) for _ in range(N)]  # 공간 정보 입력
-m = 0  # 먹이의 개수 초기화
 for i in range(N):
     for j in range(N):
         if graph[i][j] == 9:  # 아기 상어의 위치 찾기
             x, y = i, j
-        elif graph[i][j]:  # 먹이의 개수 계산
-            m += 1
+            break
 size = 2  # 아기 상어의 크기 초기화
 result, count = 0, 0  # 결과 및 먹이 먹은 횟수 초기화
 graph[x][y] = 0  # 아기 상어의 위치를 0으로 설정하여 먹었다고 표시
