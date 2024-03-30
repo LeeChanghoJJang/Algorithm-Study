@@ -45,8 +45,7 @@ possible.sort()
 
 result = 0
 # Kruskal 알고리즘을 통해 최소 신장 트리 구하기
-for p in possible:
-    cost, x, y = p[0], p[1], p[2]
+for cost, x, y in possible:
     if find(parent, x) != find(parent, y):  # 사이클을 형성하지 않으면 연결
         union(parent, x, y)
         result += cost
