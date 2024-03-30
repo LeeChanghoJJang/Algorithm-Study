@@ -11,9 +11,6 @@ def BFS(start):
     queue = deque([start])
     while queue:
         x, y = queue.popleft()
-        # 만약 보물을 찾았다면 해당 보물까지의 거리를 반환한다.
-        if treasure[x][y] == '*':
-            return distance[x][y]
         # 8방향으로 이동하며 탐색한다.
         for i in range(8):
             nx = x + dr[i][0]  # 다음 위치의 행 좌표
