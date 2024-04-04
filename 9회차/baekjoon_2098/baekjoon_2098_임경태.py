@@ -8,24 +8,24 @@ def TSP(now, visit):
     # 모든 도시를 방문한 경우
     if visit == 2**N - 1:
         return W[now][0] if W[now][0] > 0 else float('inf')
-    
+
     # 이미 계산된 경우
     if DP[now][visit] is not None:
         return DP[now][visit]
-    
+
     # 최소 비용 초기화
     min_cost = float('inf')
-    
+
     # 모든 도시를 순회
     for next in range(N):
         # 이미 방문했거나 갈 수 없는 경우 스킵
         if visit & (2**next) or W[now][next] == 0:
             continue
-        
+
         # 다음 도시로 이동하는 비용 계산
         cost = W[now][next] + TSP(next, visit | 2**next)
         min_cost = min(min_cost, cost)
-    
+
     DP[now][visit] = min_cost
     return min_cost
 
