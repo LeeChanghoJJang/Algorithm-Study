@@ -22,7 +22,6 @@ while q :
     x,y = q[0][0], q[0][1]              # 시작점 설정
     visit[x][y] = 0                     # visit 변경
     seas[x][y] = -1                     # -1 이 seas에서 아기상어의 현재 위치
-    food_legth=0                        
     food = []                           # 밥통
     # BFS
     while q :
