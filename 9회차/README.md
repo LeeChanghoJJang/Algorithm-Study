@@ -1,4 +1,4 @@
-## Algorithm Study 8회차 회의 (24.3.23.) 
+## Algorithm Study 8회차 회의 (24.3.30.) 
 
 ### 💬 회의개요
     가. 금일 일정 
