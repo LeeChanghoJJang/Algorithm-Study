@@ -13,6 +13,6 @@ for tc in range(int(input())):
         for x in range(2, n):
             for y in range(2):
                 # 이전 열의 반대 행, 두 열 전 같은 행, 두 열 전 반대 행 중 최대값 선택
-                DP[y][x] = max(DP[1-y][x-1], DP[y][x-2], DP[1-y][x-2]) + score[y][x]
+                DP[y][x] = max(DP[1-y][x-1], DP[1-y][x-2]) + score[y][x]
 
     print(max(DP[0][-1], DP[1][-1]))
