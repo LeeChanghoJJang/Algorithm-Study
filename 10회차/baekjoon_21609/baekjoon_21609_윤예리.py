@@ -28,7 +28,7 @@ def find_block(i, j, num):
                     visited[nx][ny] = 1
 
                 # 일반 블록
-                elif block[nx][ny] == block_num and not visited[nx][ny]:
+                elif block[nx][ny] == num and not visited[nx][ny]:
                     q.append((nx, ny))
                     normals.append([nx, ny])
                     visited[nx][ny] = 1
