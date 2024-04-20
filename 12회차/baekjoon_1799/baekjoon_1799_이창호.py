@@ -1,8 +1,6 @@
 import sys
 import copy
-
-# 표준 입력을 'input.txt'에서 읽도록 재지정
-sys.stdin = open('input.txt')
+input =sys.stdin.readline
 
 # 대각선 방향 정의
 dr = [(1, 1), (1, -1), (-1, 1), (-1, -1)]
