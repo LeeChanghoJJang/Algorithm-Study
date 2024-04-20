@@ -1,8 +1,5 @@
 import sys
 
-# 표준 입력을 'input.txt'에서 읽도록 재지정
-sys.stdin = open('input.txt')
-
 # 이동 방향 정의 (아래, 오른쪽, 위, 왼쪽)
 dr = [(1, 0), (0, 1), (-1, 0), (0, -1)]
 
