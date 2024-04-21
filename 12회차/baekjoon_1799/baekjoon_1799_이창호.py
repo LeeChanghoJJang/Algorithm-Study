@@ -52,9 +52,11 @@ N = int(input())
 # 보드 상태 입력
 board = [list(map(int, input().split())) for i in range(N)]
 
-# 대각선 방향에 퀸이 없는지를 확인하기 위한 3차원 배열 초기화
-diagonal = [[[False] * 4 for _ in range(N)] for _ in range(N)]
+white_board = copy.deepcopy(board)
+black_board = copy.deepcopy(board)
 
+exceptcolor(white_board,'black')
+exceptcolor(black_board,'white')
 result = 0  # 결과값 초기화
 
 # 흰색과 검은색 영역에 대해 각각 탐색
