@@ -22,7 +22,7 @@ while deq:
                 cnt += 1
                 if depth < 1:
                     deq.append([friend_num,depth + 1])
-            
+            # 한번만 가고 두번째는 카운트만
             
 print(cnt)
     
