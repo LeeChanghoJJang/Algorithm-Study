@@ -50,8 +50,8 @@
     - 프로그래머스 같은 숫자는 싫어 (Lv.1)
     - 프로그래머스 성격 유형 검사하기(2022 KAKAO TECH INTERNSHIP, Lv.1)
    ###### 3. 경태
-    - 두 큐 합 같게 만들기(2022 KAKAO TECH INTERNSHIP, Lv.2)
-    - 키패드 누르기(2020 카카오 인턴십, Lv.1)
+    - 프로그래머스 두 큐 합 같게 만들기(2022 KAKAO TECH INTERNSHIP, Lv.2)
+    - 프로그래머스 키패드 누르기(2020 카카오 인턴십, Lv.1)
    ###### 4. 동현
     - 프로그래머스 [1차] 캐시 (2018 KAKAO BLIND RECRUITMENT, Lv.2)
     - 백준 12100 2048(Easy)(골드 2) - 시뮬레이션 
