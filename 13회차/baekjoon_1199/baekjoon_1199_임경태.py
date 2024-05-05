@@ -22,6 +22,7 @@ S = [0]
 while S:
     now = S[-1]
 
+    # 그래프 업데이트
     while graph[now]:
         next = graph[now][-1]
 
