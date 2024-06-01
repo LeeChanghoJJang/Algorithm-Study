@@ -1,4 +1,4 @@
-## Algorithm Study 14회차 회의 (24.5.12.) 
+## Algorithm Study 15회차 회의 (24.5.12.) 
 
 ### 💬 회의개요
     가. 금일 일정 
