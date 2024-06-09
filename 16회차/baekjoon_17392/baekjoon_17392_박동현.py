@@ -14,7 +14,6 @@ if left <= 0: exit(print(0))
 k = left // (N+1)
 l = left % (N+1)
 
-# tmp는 각 
 tmp = 0
 for i in range(k+1):
 	tmp += i**2
