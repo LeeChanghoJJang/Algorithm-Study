@@ -20,6 +20,5 @@ def solution(board, moves):
         else:
             stack.append(pick)
 
-    print(answer)
     return answer
 
