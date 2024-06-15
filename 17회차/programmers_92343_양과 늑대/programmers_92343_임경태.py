@@ -1,8 +1,7 @@
 # 양과 늑대 (2022 KAKAO BLIND RECRUITMENT)
 
-ans = 0
-
 def solution(info, edges):
+    ans = 0
     visit = [1] + [0] * len(info)
 
     def BT(sheep, wolf):
@@ -10,7 +9,7 @@ def solution(info, edges):
         if sheep <= wolf:
             return
 
-        global ans
+        nonlocal ans
         ans = max(ans, sheep)
 
         # 트리 순회
