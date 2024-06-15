@@ -6,8 +6,6 @@ box = [list(map(int, input().split())) for _ in range(N)]
 
 
 def start(v, d):
-    global out_p
-
     if d == 0:
         p = [(v, 0)]
     elif d == 1:
@@ -18,8 +16,8 @@ def start(v, d):
         p = [(0, v)]
 
     while p:
-
         x, y = p.pop()
+
         if box[x][y]:
             d = change_dr[d]
         dx, dy = dr[d]
@@ -27,34 +25,29 @@ def start(v, d):
         if 0 <= nx < N and 0 <= ny < M:
             p.append((nx, ny))
         else:
-            out_p.append((nx, ny))
-            return
+            if nx == -1:
+                return 2*N + 2*M - ny
+            elif ny == -1:
+                return nx+1
+            elif nx == N:
+                return N + ny + 1
+            else:
+                return 2*N + M - nx
 
 
 dr = [(0, 1), (-1, 0), (0, -1), (1, 0)]
-change_dr = {0: 1, 1: 0, 2: 3, 3: 2}
-out_num = {}
-out_p = []
-idx = 1
+change_dr = [1, 0, 3, 2]
+result = []
 for i in range(N):
-    start(i, 0)
-    out_num[(i, -1)] = idx
-    idx += 1
+    result.append(start(i, 0))
 
 for i in range(M):
-    start(i, 1)
-    out_num[(N, i)] = idx
-    idx += 1
+    result.append(start(i, 1))
 
 for i in range(N):
-    start(N-i-1, 2)
-    out_num[(N-i-1, M)] = idx
-    idx += 1
+    result.append(start(N-i-1, 2))
 
 for i in range(M):
-    start(M-i-1, 3)
-    out_num[(-1, M-i-1)] = idx
-    idx += 1
+    result.append(start(M-i-1, 3))
 
-for i in out_p:
-    print(out_num[i], end=' ')
+print(*result)
