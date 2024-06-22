@@ -1,4 +1,4 @@
-def solution(gems):
+현def solution(gems):
     start = 0
     end = 0
 
