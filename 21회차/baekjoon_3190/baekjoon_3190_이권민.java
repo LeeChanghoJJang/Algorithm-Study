@@ -36,34 +36,27 @@ public class Main {
         boolean[][] visited = new boolean[N+1][N+1];
         visited[1][1] = true;
         int time = 0;
-        int directionIndex = 0; // Starting direction is 'Right'
-
+        int directionIndex = 0; 
         while (true) {
             time++;
             int[] head = snake.peekFirst();
             int nextRow = head[0] + directions[directionIndex][0];
             int nextCol = head[1] + directions[directionIndex][1];
 
-            // Check if the snake hits the wall or itself
             if (nextRow <= 0 || nextRow > N || nextCol <= 0 || nextCol > N || visited[nextRow][nextCol]) {
                 return time;
             }
 
-            // Move the snake
             if (matrix[nextRow][nextCol] == 1) {
-                // Eat the apple
-                matrix[nextRow][nextCol] = 0; // Remove the apple
+                matrix[nextRow][nextCol] = 0; 
             } else {
-                // Move the tail
                 int[] tail = snake.pollLast();
                 visited[tail[0]][tail[1]] = false;
             }
 
-            // Add new head position
             snake.offerFirst(new int[]{nextRow, nextCol});
             visited[nextRow][nextCol] = true;
 
-            // Change direction if needed
             if (commandMap.containsKey(time)) {
                 char turn = commandMap.get(time);
                 if (turn == 'L') {

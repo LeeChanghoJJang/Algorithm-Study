@@ -3,23 +3,22 @@ import java.util.*;
 public class Main {
     //BFS 지역 이동 정보 클래스
     static class node implements Comparable<node>{
+        // 이 노드 객체를 다른 노드객체와 비교할 수 있다.
+        // Comparable 인터페이스를 구현하면 compareTo메서드를 만들어야 함
         int position, value;
         public node(int position, int value) {
             this.position = position;
             this.value = value;
         }
         //거리 기준 오름차순 정렬
-        @Override
+        // @Override
         public int compareTo(node o) {
             return this.value - o.value;
         }
     }
     static int answer = Integer.MIN_VALUE;
     public static void main(String[] args) throws IOException{
-        //입력값 처리하는 BufferedReader
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        //결과값 출력하는 BufferedWriter
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
@@ -29,13 +28,13 @@ public class Main {
         for(int i=0;i<=n;i++)
             graph.add(new ArrayList<>());
 
-        st = new StringTokenizer(br.readLine()," ");
+        st = new StringTokenizer(br.readLine());
         //각 지역 아이템 개수 배열에 저장
         for(int i=1;i<=n;i++)
             score[i] = Integer.parseInt(st.nextToken());
         //양방향 길에 대한 정보 저장
         for(int i=0;i<r;i++) {
-            st = new StringTokenizer(br.readLine()," ");
+            st = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
             int l = Integer.parseInt(st.nextToken());
@@ -47,9 +46,7 @@ public class Main {
         for(int i=1;i<=n;i++)
             answer = Math.max(search(i, graph, score, n, m), answer);
 
-        bw.write(answer + "");	//최대 아이템 개수 BufferedWriter 저장
-        bw.flush();		//결과 출력
-        bw.close();
+        System.out.println(answer);
         br.close();
     }
     //BFS탐색을 통해 각 지역에서 탐색범위 안에 먹을 수 있는 아이템 개수 탐색하는 함수
