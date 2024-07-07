@@ -1,4 +1,4 @@
-## Algorithm Study 20회차 회의 (24.6.29.) 
+## Algorithm Study 21회차 회의 (24.7.6.) 
 
 ### 💬 회의개요
     가. 금일 일정 
