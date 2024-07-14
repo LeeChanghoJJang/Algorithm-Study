@@ -12,7 +12,7 @@ dr = [-1, 0, 1, 0]
 dc = [0, 1, 0, -1]
 
 for i in range(N):
-    matrix.append(list(input())[:M])
+    matrix.append(list(input().strip()))  # Strip the newline character from each line
     if 'S' in matrix[i]:
         start = (i, matrix[i].index('S'))
     if 'F' in matrix[i]:
@@ -27,6 +27,7 @@ def bfs(start, target):
     
     while queue:
         r, c, time = queue.popleft()
+        
         if (r, c) == target:
             return time
         
@@ -37,17 +38,22 @@ def bfs(start, target):
                 queue.append((nr, nc, time + 1))
     
     return float('inf')
-next = None
-feed_time = float('inf')
-for f in feed:
-    n = bfs(start, f)
-    if feed_time > n:
-        feed_time = n
-        next = f
-if next == None:
-    print(-1)
-    sys.exit(0)
-home_time = bfs(next, home)
-min_time = feed_time + home_time if feed_time != float('inf') and home_time != float('inf') else -1
 
-print(min_time)
+min_time = float('inf')
+
+# Calculate the minimum time from each feed to home
+for f in feed:
+    feed_time = bfs(start, f)
+    if feed_time == float('inf'):
+        continue  # If there's no valid path from start to this feed, skip it
+    
+    home_time = bfs(f, home)
+    if home_time == float('inf'):
+        continue  # If there's no valid path from this feed to home, skip it
+    
+    min_time = min(min_time, feed_time + home_time)
+
+if min_time == float('inf'):
+    print(-1)
+else:
+    print(min_time)
